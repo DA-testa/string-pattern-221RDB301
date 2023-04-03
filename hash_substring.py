@@ -5,7 +5,7 @@ def read_input():
         text = input().strip()
     elif source == "F":
         path = './test/'
-        file_name = input("Enter file name: ")
+        file_name = input("Enter file name: ").strip()
         folder = path + file_name
     # let user input file name to use, don't allow file names with letter a
         if 'a' in file_name:
