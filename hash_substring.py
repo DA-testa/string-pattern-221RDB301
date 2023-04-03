@@ -4,7 +4,8 @@ def read_input():
         pattern = input().strip()
         text = input().strip()
     elif source == "F":
-        with open("input.txt", "r") as input_file:
+        filename = input("Enter the filename: ")
+        with open("./tests/" + filename, mode = "r") as input_file:
             pattern = input_file.readline().strip()
             text = input_file.readline().strip()
     return pattern, text
