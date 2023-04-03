@@ -4,23 +4,10 @@ def read_input():
         pattern = input().strip()
         text = input().strip()
     elif source == "F":
-        path = './test/'
-        file_name = input("Enter file name: ").strip()
-        folder = path + file_name
-    # let user input file name to use, don't allow file names with letter a
-        if 'a' in file_name:
-            print("File is not allowed to contain letter 'a'")
-            return
-        try:
-            with open(folder, 'r', encoding='utf-8') as file:
+        filename = input("Enter file name: ").strip()
+        with open("./tests/" + filename, mode = "r") as file:
                 pattern = file.readline().strip()
                 text = file.readline().strip()
-        except FileNotFoundError:
-            print("Error: File not found")
-            return
-        except ValueError:
-            print("Error: Invalid input format")
-            return
     return pattern, text
 
 def print_occurrences(output):
