@@ -5,9 +5,12 @@ def read_input():
         text = input().strip()
     elif source == "F":
         filename = input()
-        with open("./tests/" + filename, mode = "r") as input_file:
-            pattern = input_file.readline().strip()
-            text = input_file.readline().strip()
+        try:
+            with open("./tests/" + filename, mode = "r") as input_file:
+                pattern = input_file.readline().strip()
+                text = input_file.readline().strip()
+        except EOFError:
+            pattern, text = "", ""
     return pattern, text
 
 def print_occurrences(output):
