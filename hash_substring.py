@@ -5,9 +5,9 @@ def read_input():
         text = input().strip()
     elif source == "F":
         file_name = input().strip()
-        with open(file_name, mode="r") as input_file:
-            pattern = input_file.readline().strip()
-            text = input_file.readline().strip()
+        with open(file_name, mode="r") as file:
+            pattern = file.readline().strip()
+            text = file.readline().strip()
     return pattern, text
 
 def print_occurrences(output):
